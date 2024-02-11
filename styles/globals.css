@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+button:focus,
+button:focus-visible,
+.text-link:focus,
+.text-link:focus-visible {
+  outline: none;
+}
+
 body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
@@ -20,6 +27,7 @@ h5,
 h6,
 p {
   margin: 0;
+  margin-block: 0;
 }
 
 ul {
@@ -39,4 +47,5 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  border: none;
 }
