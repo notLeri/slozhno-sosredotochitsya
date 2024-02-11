@@ -29,6 +29,14 @@
   --cover-img: url(/images/cover-image-light.png);
   --decoration-color: #353430;
   --button-hover: rgb(53, 52, 48, 0.5);
+  
+  .header__decorator::before {
+    display: none;
+  }
+
+  .header__decorator::after {
+    display: none;
+  }
 }
 
 @media (prefers-color-scheme: light) {
