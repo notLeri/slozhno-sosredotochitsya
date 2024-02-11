@@ -4,17 +4,17 @@
   переключая тему
 */
 :root.theme-dark {
-  --primary-font: 'IBM Plex mono', sans-serif;
+  --primary-font: "IBM Plex mono", sans-serif;
   --bg-color: #000028;
-  --accent-color: #FF0070;
-  --title-color: #DB00FF;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
   --accent-font-color: #000028;
-  --section-title-color: #FF0070;
-  --font-color: #F1B2CE;
+  --section-title-color: #ff0070;
+  --font-color: #f1b2ce;
   --cover-img: url(/images/cover-image-dark.png);
-  --decoration-color: #FF0070;
+  --decoration-color: #ff0070;
   --button-hover: rgb(255, 0, 112, 0.5);
-  --title-accent-color: #FF0070;
+  --title-accent-color: #ff0070;
 }
 
 .page.theme_dark {
@@ -25,9 +25,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
   .page.theme_dark {
-
     .header__decorator::before {
       content: "rec";
       position: absolute;
@@ -53,9 +51,7 @@
 }
 
 @media (width >= 767px) {
-
   .page.theme_dark {
-
     .header__decorator::before {
       right: 59px;
       top: 20px;
