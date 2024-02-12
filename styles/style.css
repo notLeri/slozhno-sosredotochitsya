@@ -2,6 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  position: relative;
   background-color: var(--bg-color);
   background-image: var(--cover-img);
   background-attachment: fixed;
@@ -13,9 +14,41 @@
   gap: 40px;
 }
 
+.header__decorator::before {
+  content: "rec";
+  position: absolute;
+  right: 50px;
+  top: 11px;
+  color: var(--accent-color);
+  inline-size: 21px;
+  text-transform: uppercase;
+}
+
+.header__decorator::after {
+  content: "";
+  position: absolute;
+  right: 19px;
+  top: 19px;
+  background-color: var(--accent-color);
+  border-radius: 50px;
+  inline-size: 9px;
+  block-size: 9px;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
 @media (width >= 767px) {
   .page {
     gap: 60px;
+  }
+
+  .header__decorator::before {
+    right: 59px;
+    top: 20px;
+  }
+  
+  .header__decorator::after {
+    right: 28px;
+    top: 28px;
   }
 }
 
@@ -41,6 +74,12 @@
   block-size: 25px;
 }
 
+@media (width <= 375px) {
+  .decorated-zone::before {
+    right: calc(100vw + 35px);
+  }
+}
+
 @media (width >= 767px) {
   .decorated-zone::before {
     left: calc(100vw - 45px);
@@ -52,7 +91,14 @@
   }
 }
 
+@media (width >= 1440px) {
+  .decorated-zone::before {
+    left: calc(100vw - (100vw - 1395px));
+  }
+}
+
 .header {
+  min-height: 668px;
   display: grid;
   block-size: 100vh;
   grid-template-rows: 0 0 1fr 1fr 1fr 0;
@@ -95,6 +141,7 @@
 
 .header__theme-menu-button:hover {
   border: 1px solid var(--button-hover);
+  cursor: pointer;
 }
 
 .header__theme-menu-button:focus,
@@ -144,6 +191,7 @@
   color: var(--accent-font-color);
   background-color: var(--accent-color);
   font-weight: bold;
+  font-size: 18px;
   line-height: 23.4px;
 }
 
@@ -193,6 +241,7 @@
 
 .heading-title {
   color: var(--section-title-color);
+  font-size: 18px;
 }
 
 .content__section {
@@ -250,13 +299,9 @@
   text-decoration: none;
 }
 
-.text-link:hover {
-  border-bottom: 1px solid var(--decoration-color);
-}
-
 .text-link:focus,
 .text-link:focus-visible {
-  outline: 1px solid var(--decoration-color);
+  outline: 1px solid var(--font-color);
 }
 
 .content-box {
@@ -275,35 +320,35 @@
   gap: 10px;
 }
 
-.images-bundle {
+.images-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.image-set-item {
+.image-list-item {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.image-set-item-1 {
+.image-list-item-1 {
   grid-area: sunset;
 }
 
-.image-set-item-2 {
+.image-list-item-2 {
   grid-area: ice-cream;
 }
 
-.image-set-item-3 {
+.image-list-item-3 {
   grid-area: books;
 }
 
-.image-set-item-4 {
+.image-list-item-4 {
   grid-area: tape;
 }
 
-.image-set-item-5 {
+.image-list-item-5 {
   grid-area: street;
 }
 
@@ -312,7 +357,7 @@
     gap: 20px;
   }
 
-  .images-bundle {
+  .images-list {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 31.5%);
@@ -324,12 +369,13 @@
 }
 
 @media (width >= 950px) {
-  .images-bundle {
+  .images-list {
     grid-template-columns: repeat(3, 32%);
   }
 }
 
 .footer {
+  min-height: 668px;
   height: 100vh;
   display: grid;
   grid-template-rows: 0 1fr 0;

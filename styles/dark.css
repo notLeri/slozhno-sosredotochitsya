@@ -11,7 +11,7 @@
   --accent-font-color: #000028;
   --section-title-color: #ff0070;
   --font-color: #f1b2ce;
-  --cover-img: url(/images/cover-image-dark.png);
+  --cover-img: url(../images/cover-image-dark.png);
   --decoration-color: #ff0070;
   --button-hover: rgb(255, 0, 112, 0.5);
   --title-accent-color: #ff0070;
@@ -22,43 +22,4 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-}
-
-@media (prefers-color-scheme: dark) {
-  /* .page.theme_dark { */
-    .header__decorator::before {
-      content: "rec";
-      position: absolute;
-      right: 50px;
-      top: 11px;
-      color: var(--accent-color);
-      inline-size: 21px;
-      text-transform: uppercase;
-    }
-
-    .header__decorator::after {
-      content: "";
-      position: absolute;
-      right: 19px;
-      top: 19px;
-      background-color: var(--accent-color);
-      border-radius: 50px;
-      inline-size: 9px;
-      block-size: 9px;
-      box-shadow: 0px 0px 4px 3px var(--accent-color);
-    }
-  /* } */
-}
-
-@media (width >= 767px) {
-  /* .page.theme_dark { */
-    .header__decorator::before {
-      right: 59px;
-      top: 20px;
-    }
-    .header__decorator::after {
-      right: 28px;
-      top: 28px;
-    }
-  /* } */
 }
